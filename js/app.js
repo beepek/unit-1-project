@@ -4,7 +4,7 @@ const sleepBtn = document.querySelector("#action-sleep");
 const eatBtn = document.querySelector("#action-eat");
 const advBtn = document.querySelector("#action-adventure");
 //consts for the main screen
-
+//test for git push
 const sleepLvl = document.querySelector("#sleep-stats");
 const eatLvl = document.querySelector("#food-stats");
 const advLvl = document.querySelector("#adventure-stats");
