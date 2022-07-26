@@ -12,18 +12,23 @@ const daysLived = document.querySelector("#days-lived");
 /*----- app's state (variables) -----*/
 //state variables/init variables
 //idk if im doing this correctly
-const startSleep = 2;
-const startFood = 2;// these are the values at start of game// 
-const startAdv = 2;
-//day counter
-let days = 1;
+ const startSleep = 2;
+ const startFood = 2;// these are the values at start of game// 
+ const startAdv = 2;
+// //day counter
+ let days = 1;
 
-//console.log(startAdv);
-function hero() {//new hero object
-    this.sleep = startSleep;
-    this.food = startFood;
-    this.adventure = startAdv;
-    this.day = days;
+// //console.log(startAdv);
+// //function hero () {//new hero object}
+    
+
+class hero {
+    constructor(sleep, food, adventure, day) {
+        this.sleep = startSleep;
+        this.food = startFood;
+        this.adventure = startAdv;
+        this.day = days;
+    }
 }
 
  let hero1 =new hero();
@@ -32,40 +37,45 @@ function hero() {//new hero object
  advLvl.innerHTML = hero1.adventure
  daysLived.innerHTML = hero1.day
 
-
+//console.log(hero1);
 function actionEat(hero) {
     hero.food += 1 
-    days += 1
+    hero.day += 1
     hero.sleep -= 1 //for some reason this doesnt work? 
-    console.log(hero.sleep);
+    //console.log(hero.sleep);
+    sleepLvl.innerHTML = hero.sleep//please god let this work
     eatLvl.innerHTML = hero.food//for each action//
     daysLived.innerHTML = hero.day// added this morning
 }
+//console.log(hero1);
 function actionSleep(hero) {
     hero.sleep += 1
-    days += 1
-    //hero.food -= 1  //im hoping this will minus 1 from the non-clicked core value (food/sleep)
+    hero.day += 1
+    hero.food -= 1  
+    eatLvl.innerHTML = hero.food
     sleepLvl.innerHTML = hero.sleep
     daysLived.innerHTML = hero.day
 }
 function actionAdventure(hero) {
     hero.adventure += 1
-    days += 1
+    hero.day += 1
     hero.sleep -= 1
-    //hero.food -= 1
+    hero.food -= 1
+    sleepLvl.innerHTML = hero.sleep
+    eatLvl.innerHTML = hero.food
     advLvl.innerHTML = hero.adventure
     daysLived.innerHTML = hero.day
 }
-console.log(days);
+//console.log(days);
 //event listeners for dem buttons 
 sleepBtn.addEventListener("click", function() {
    actionSleep(hero1);
-   //console.log(hero1.sleep);
+   console.log(hero1, "hero1 after sleep click");
 });
 eatBtn.addEventListener("click", function() {
   //console.log(hero1.food);
     actionEat(hero1);
-   //console.log(hero1.food);
+   console.log(hero1, "hero1 after click");
 });
 advBtn.addEventListener("click", function() {
    actionAdventure(hero1);
@@ -76,23 +86,17 @@ advBtn.addEventListener("click", function() {
 /*----- cached element references -----*/
 /*----- event listeners -----*/
 /*----- functions -----*/
-function init() {
+
 //
 //     sleepCount = (hero.sleep / startSleep + 1);
 // foodCount = (hero.food /startFood + 1);
 // advCount = (hero.adventure / startAdv + 1);
-//days your hero survived counter
-days++;
-daysLived.innerHTML = days;
 
 // writing a loop for death condition
-if ((sleepCount <= 0) || (foodCount <= 0)) {
-    sleepCount = 0,
-    foodCount = 0,
-    advCount = 0,
-    alert( 'you lived for ' + days);
-}
+if ((hero.sleep <= 0) || (hero.food <= 0)) {
+    alert('you lived for ' + days);
 };
+
 
 // sleepLvl.innerHTML= sleep;
 // eatLvl.innerHTML = food;
@@ -101,4 +105,3 @@ if ((sleepCount <= 0) || (foodCount <= 0)) {
 
 
 //render();// im totally forgetting how to do this
-//init();
