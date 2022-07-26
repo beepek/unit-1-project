@@ -30,52 +30,46 @@ function hero() {//new hero object
  eatLvl.innerHTML = hero1.food
  sleepLvl.innerHTML = hero1.sleep
  advLvl.innerHTML = hero1.adventure
- // am i messing up by adding this?
-// let sleepCount;
-// let foodCount;
-// let advCount;
-// let day = 0;
-// console.log("hero1", hero1);
+ daysLived.innerHTML = hero1.day
 
 
-// hero.actionSleep = function() {// functions for the buttons 
-//     this.sleep += 1 / (daysLived += 1)
-// };
-// hero.actionEat = function() {
-//     this.food += 1 / (daysLived += 1)
-// };
-// hero.actionAdventure = function() {
-//     this.adventure += 1 / (daysLived += 1)
-// };
 function actionEat(hero) {
     hero.food += 1 
     days += 1
-    eatLvl.innerHTML = hero.food//for each action
+    hero.sleep -= 1 //for some reason this doesnt work? 
+    console.log(hero.sleep);
+    eatLvl.innerHTML = hero.food//for each action//
+    daysLived.innerHTML = hero.day// added this morning
 }
 function actionSleep(hero) {
     hero.sleep += 1
     days += 1
+    //hero.food -= 1  //im hoping this will minus 1 from the non-clicked core value (food/sleep)
     sleepLvl.innerHTML = hero.sleep
+    daysLived.innerHTML = hero.day
 }
 function actionAdventure(hero) {
     hero.adventure += 1
     days += 1
+    hero.sleep -= 1
+    //hero.food -= 1
     advLvl.innerHTML = hero.adventure
+    daysLived.innerHTML = hero.day
 }
 console.log(days);
 //event listeners for dem buttons 
 sleepBtn.addEventListener("click", function() {
    actionSleep(hero1);
-   console.log(hero1.sleep);
+   //console.log(hero1.sleep);
 });
 eatBtn.addEventListener("click", function() {
-  console.log(hero1.food);
+  //console.log(hero1.food);
     actionEat(hero1);
-   console.log(hero1.food);
+   //console.log(hero1.food);
 });
 advBtn.addEventListener("click", function() {
    actionAdventure(hero1);
-   console.log(hero1.adventure);
+   //console.log(hero1.adventure);
 });
 
 
@@ -100,11 +94,11 @@ if ((sleepCount <= 0) || (foodCount <= 0)) {
 }
 };
 
-sleepLvl.innerHTML= sleepCount;
-eatLvl.innerHTML = foodCount;
-advLvl.innerHTML = advCount;
-// what i need to do - clean up my logic and get my init working
+// sleepLvl.innerHTML= sleep;
+// eatLvl.innerHTML = food;
+// advLvl.innerHTML = adventure;
+// // what i need to do - clean up my logic and get my init working
 
 
-render();// im totally forgetting how to do this
-init();
+//render();// im totally forgetting how to do this
+//init();
