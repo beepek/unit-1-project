@@ -11,9 +11,8 @@ const advLvl = document.querySelector("#adventure-stats");
 const daysLived = document.querySelector("#days-lived");
 /*----- app's state (variables) -----*/
 //state variables/init variables
-//idk if im doing this correctly
  const startSleep = 2;
- const startFood = 2;// these are the values at start of game// 
+ const startFood = 2;//values at start of game// 
  const startAdv = 2;
 // //day counter
  let days = 1;
@@ -41,11 +40,10 @@ class hero {
 function actionEat(hero) {
     hero.food += 1 
     hero.day += 1
-    hero.sleep -= 1 //for some reason this doesnt work? 
-    //console.log(hero.sleep);
-    sleepLvl.innerHTML = hero.sleep//please god let this work
-    eatLvl.innerHTML = hero.food//for each action//
-    daysLived.innerHTML = hero.day// added this morning
+    hero.sleep -= 1 
+    sleepLvl.innerHTML = hero.sleep
+    eatLvl.innerHTML = hero.food
+    daysLived.innerHTML = hero.day
     check();
 }
 //console.log(hero1);
@@ -92,5 +90,5 @@ advBtn.addEventListener("click", function() {
    //console.log(hero1.adventure);
 });
 
-
+//FROM SCRATCH AND A DAY EARLY BABY, WOOOOOOOOO
 
