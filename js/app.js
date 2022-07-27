@@ -46,6 +46,7 @@ function actionEat(hero) {
     sleepLvl.innerHTML = hero.sleep//please god let this work
     eatLvl.innerHTML = hero.food//for each action//
     daysLived.innerHTML = hero.day// added this morning
+    check();
 }
 //console.log(hero1);
 function actionSleep(hero) {
@@ -55,6 +56,7 @@ function actionSleep(hero) {
     eatLvl.innerHTML = hero.food
     sleepLvl.innerHTML = hero.sleep
     daysLived.innerHTML = hero.day
+    check();
 }
 function actionAdventure(hero) {
     hero.adventure += 1
@@ -65,7 +67,15 @@ function actionAdventure(hero) {
     eatLvl.innerHTML = hero.food
     advLvl.innerHTML = hero.adventure
     daysLived.innerHTML = hero.day
+    check();
 }
+function check() {
+    console.log(hero1.sleep, hero1.food);
+    if (hero1.sleep <= 0 || hero1.food <= 0) {
+        console.log("if statement")
+        alert('you lived for ' + days);
+    };
+};
 //console.log(days);
 //event listeners for dem buttons 
 sleepBtn.addEventListener("click", function() {
@@ -83,25 +93,4 @@ advBtn.addEventListener("click", function() {
 });
 
 
-/*----- cached element references -----*/
-/*----- event listeners -----*/
-/*----- functions -----*/
 
-//
-//     sleepCount = (hero.sleep / startSleep + 1);
-// foodCount = (hero.food /startFood + 1);
-// advCount = (hero.adventure / startAdv + 1);
-
-// writing a loop for death condition
-if ((hero.sleep <= 0) || (hero.food <= 0)) {
-    alert('you lived for ' + days);
-};
-
-
-// sleepLvl.innerHTML= sleep;
-// eatLvl.innerHTML = food;
-// advLvl.innerHTML = adventure;
-// // what i need to do - clean up my logic and get my init working
-
-
-//render();// im totally forgetting how to do this
