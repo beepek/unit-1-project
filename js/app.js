@@ -86,4 +86,9 @@ advBtn.addEventListener("click", function() {
 });
 
 
-
+//icebox - a replay button
+//a water button and level(a 3rd core value)
+//a time based ticker instead of turn based
+//a win condition (30day survived)
+//level increase(31+ days)
+//random fight encounters with 3 options, attack, block, flee(flee reduces lvl by 1)
