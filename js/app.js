@@ -4,23 +4,17 @@ const sleepBtn = document.querySelector("#action-sleep");
 const eatBtn = document.querySelector("#action-eat");
 const advBtn = document.querySelector("#action-adventure");
 //consts for the main screen
-//test for git push
 const sleepLvl = document.querySelector("#sleep-stats");
 const eatLvl = document.querySelector("#food-stats");
 const advLvl = document.querySelector("#adventure-stats");
 const daysLived = document.querySelector("#days-lived");
-/*----- app's state (variables) -----*/
 //state variables/init variables
  const startSleep = 2;
  const startFood = 2;//values at start of game// 
  const startAdv = 2;
 // //day counter
  let days = 1;
-
-// //console.log(startAdv);
-// //function hero () {//new hero object}
     
-
 class hero {
     constructor(sleep, food, adventure, day) {
         this.sleep = startSleep;
@@ -71,11 +65,11 @@ function check() {
     console.log(hero1.sleep, hero1.food);
     if (hero1.sleep <= 0 || hero1.food <= 0) {
         console.log("if statement")
-        alert('you lived for ' + days);
+        alert('you lived for ' + days + " days");
     };
 };
 //console.log(days);
-//event listeners for dem buttons 
+//event listeners for the buttons 
 sleepBtn.addEventListener("click", function() {
    actionSleep(hero1);
    console.log(hero1, "hero1 after sleep click");
@@ -90,5 +84,5 @@ advBtn.addEventListener("click", function() {
    //console.log(hero1.adventure);
 });
 
-//FROM SCRATCH AND A DAY EARLY BABY, WOOOOOOOOO
+
 
