@@ -8,6 +8,7 @@ const sleepLvl = document.querySelector("#sleep-stats");
 const eatLvl = document.querySelector("#food-stats");
 const advLvl = document.querySelector("#adventure-stats");
 const daysLived = document.querySelector("#days-lived");
+const gameMessage = document.querySelector('#gamestatus');
 //state variables/init variables
  const startSleep = 2;
  const startFood = 2;//values at start of game// 
@@ -65,7 +66,7 @@ function check() {
     console.log(hero1.sleep, hero1.food);
     if (hero1.sleep <= 0 || hero1.food <= 0) {
         console.log("if statement")
-        alert('you lived for ' + days + " days");
+        gameMessage.innerText = 'you lived for ' + days + " days";
     };
 };
 //console.log(days);
