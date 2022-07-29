@@ -2,6 +2,11 @@
 ---
 This is a simple tamagotchi based game. You are given 3 values, with three buttons to click. each click will remove 1 from the opposite value, and advance the days survived by 1. If your food or sleep reach 0 the game is over.
 ## screenshots
+<img src ="https://i.imgur.com/g6SHRyR.png"/>
+
+<img src ="https://i.imgur.com/3LQzTXk.png"/>
+
+
 ---
 ## technologies used
 HTML,CSS,JavaScript
@@ -31,6 +36,8 @@ replay button.
 time based value removal instead of turn based.
 
 remove guaranteed loss from adventure, make it a core value.
+
+fix the grid
 
 ---
 

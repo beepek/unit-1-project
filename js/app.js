@@ -66,7 +66,7 @@ function check() {
     console.log(hero1.sleep, hero1.food);
     if (hero1.sleep <= 0 || hero1.food <= 0) {
         console.log("if statement")
-        gameMessage.innerText = 'you lived for ' + days + " days";
+        gameMessage.innerText = 'you lived for ' + hero1.day + " days";
     };
 };
 //console.log(days);
